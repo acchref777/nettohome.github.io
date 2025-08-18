@@ -1,31 +1,35 @@
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nettofil </title>
-  <meta name="description" content="صفحة هبوط بسيطة لاختيار الجهاز (حاسوب، أندرويد، تلفاز ذكي)">
+  <meta name="description" content="Landing page for services (Netflix, Instagram, Facebook)">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg1:#0f0f12;--bg2:#14151b;--card:#171922;--muted:#9aa0aa;--text:#ffffff;--accent:#e50914;--accent-2:#ffb703;--ring:rgba(229,9,20,.35);
+      --bg1:#0f0f12;--bg2:#14151b;--card:#171922;--muted:#9aa0aa;--text:#ffffff;--accent:#e50914;
     }
-    *{box-sizing:border-box}
+    *{box-sizing:border-box;margin:0;padding:0}
     html,body{height:100%}
     body{
-      margin:0;font-family:"Cairo", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      font-family:"Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color:var(--text);
-      background: radial-gradient(1200px 800px at 80% -10%, #1f2333 0%, transparent 60%),
-                  radial-gradient(1000px 700px at -10% 110%, #22192b 0%, transparent 60%),
+      background: radial-gradient(1200px 800px at 80% -10%, #1f2333 0%, transparent 70%),
+                  radial-gradient(1000px 700px at -10% 110%, #22192b 0%, transparent 85%),
                   linear-gradient(180deg,var(--bg1),var(--bg2));
-      display:grid;place-items:center;padding:24px;
+      padding:24px;
+      text-align:center;
     }
     .wrap{max-width:960px;width:100%;}
-    header{display:flex;align-items:center;gap:14px;margin-bottom:24px}
-    .logo{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:#2a2f3d}
-    .brand{font-weight:800;letter-spacing:1px;font-size:28px; text-align: center;}
+    header{margin-bottom:24px}
+    .brand{font-weight:900;font-size:46px;font-family:"Montserrat", sans-serif;}
     .card{
       background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
       border:1px solid rgba(255,255,255,.08);
@@ -34,8 +38,7 @@
     }
     h1{margin:0 0 6px;font-size:28px}
     p.lead{margin:0 0 18px;color:var(--muted)}
-    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px}
-    @media (max-width:720px){.grid{grid-template-columns:1fr}}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:18px}
     .btn{
       display:flex;align-items:center;justify-content:space-between;gap:12px;
       text-decoration:none;color:var(--text);background:var(--card);
@@ -44,125 +47,126 @@
     }
     .btn:hover{transform:translateY(-2px);box-shadow:0 10px 18px rgba(0,0,0,.35);border-color:#2d3342}
     .btn .l{display:flex;align-items:center;gap:12px}
-    .tag{font-size:12px;color:#c9ced8;background:#262a36;padding:4px 10px;border-radius:999px;border:1px solid #33384a}
     .device{font-weight:700;font-size:18px}
-    .check{font-size:14px;color:#a7f3d0}
-    .foot{margin-top:22px;color:var(--muted);font-size:13px;display:flex;gap:10px;align-items:center}
-    .pill{border:1px solid rgba(255,255,255,.08);background:#1b1f2b;border-radius:999px;padding:6px 10px}
-    .cta{
-      display:inline-block;margin-top:12px;background:var(--accent);border:none;color:#fff;
-      font-weight:800;padding:12px 16px;border-radius:12px;cursor:pointer
-    }
-    dialog{border:none;border-radius:16px;padding:0;max-width:520px;width:90%}
-    dialog::backdrop{background:rgba(0,0,0,.6)}
-    .modal{background:#0f1220;color:#fff;border:1px solid #2c3350;border-radius:16px;padding:18px}
-    .modal h3{margin:0 0 8px}
-    .modal p{margin:0 0 12px;color:#c9ced8}
-    .modal .row{display:flex;gap:8px;flex-wrap:wrap}
-    input.copy{flex:1;min-width:200px;background:#0a0d18;border:1px solid #2c3350;border-radius:10px;padding:10px;color:#fff}
     .small{font-size:12px;color:#9aa0aa}
+    .tag{font-size:12px;color:#c9ced8;background:#262a36;padding:4px 10px;border-radius:999px;border:1px solid #33384a}
+    footer{margin-top:28px;text-align:center}
+    .socials{display:flex;justify-content:center;gap:18px;margin-top:12px}
+    .socials a{color:#fff;font-size:28px;text-decoration:none}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <div class="logo" aria-hidden="true">🍿</div>
-      <div class="brand">نتفلكسي الجديدة</div>
+      <div class="brand">NETTOFIL</div>
     </header>
 
     <main class="card">
-      <h1>مرحبا بيك! 👋</h1>
-      <p class="lead">اختار الجهاز اللي تحب تثبّت عليه الخدمة:</p>
+      <h1>Select your service 👇</h1>
+      <p class="lead">You can access the links directly:</p>
 
       <div class="grid">
-        <a class="btn" href="#" data-goal="pc">
+        <!-- Netflix -->
+        <a class="btn" href="#" data-goal="netflix">
           <div class="l">
-            <span style="font-size:22px">🖥️</span>
+            <span style="font-size:22px">🍿</span>
             <div>
-              <div class="device"> Site • </div>
-              <div class="small">ويندوز / ماك</div>
+              <div class="device">Netflix</div>
+              <div class="small">Unlimited streaming</div>
             </div>
           </div>
-          <div class="r">
-            <span class="tag">جديد</span>
-          </div>
+          <div class="r"><span class="tag">Available</span></div>
         </a>
 
-        <a class="btn" href="#" data-goal="android">
+        <!-- Instagram -->
+        <a class="btn" href="#" data-goal="instagram">
           <div class="l">
-            <span style="font-size:22px">📱</span>
+            <span style="font-size:22px">📸</span>
             <div>
-              <div class="device">Android • </div>
-              <div class="small">ملف APK آمن</div>
+              <div class="device">Instagram</div>
+              <div class="small">IG services</div>
             </div>
           </div>
-          <div class="r">
-            <span class="check">✅ قريبا</span>
-          </div>
+          <div class="r"><span class="tag">New</span></div>
         </a>
 
-        <a class="btn" href="#" data-goal="tv">
+        <!-- Facebook -->
+        <a class="btn" href="#" data-goal="facebook">
           <div class="l">
-            <span style="font-size:22px">📺</span>
+            <span style="font-size:22px">📘</span>
             <div>
-              <div class="device"> TV •  </div>
-              <div class="small">Android TV </div>
+              <div class="device">Facebook</div>
+              <div class="small">FB services</div>
             </div>
           </div>
-          <div class="r">
-             <span class="check">✅ قريبا</span>
-          </div>
+          <div class="r"><span class="tag">New</span></div>
         </a>
-      </div>
 
-      <div class="foot">
-        <span class="pill">🎧 SpotX — Spotify مدى الحياة</span>
-        <button class="cta" id="openModal">إظهار الرابط</button>
+        <!-- Extra button 1 -->
+        <a class="btn" href="#" data-goal="service4">
+          <div class="l">
+            <span style="font-size:22px">🎶</span>
+            <div>
+              <div class="device">Spotify</div>
+              <div class="small">Music premium</div>
+            </div>
+          </div>
+          <div class="r"><span class="tag">Soon</span></div>
+        </a>
+
+        <!-- Extra button 2 -->
+        <a class="btn" href="#" data-goal="service5">
+          <div class="l">
+            <span style="font-size:22px">🎮</span>
+            <div>
+              <div class="device">Gaming</div>
+              <div class="small">Special offers</div>
+            </div>
+          </div>
+          <div class="r"><span class="tag">Soon</span></div>
+        </a>
+
+        <!-- Extra button 3 -->
+        <a class="btn" href="#" data-goal="service6">
+          <div class="l">
+            <span style="font-size:22px">🎥</span>
+            <div>
+              <div class="device">Movies+</div>
+              <div class="small">Exclusive content</div>
+            </div>
+          </div>
+          <div class="r"><span class="tag">Soon</span></div>
+        </a>
       </div>
     </main>
 
-    <dialog id="dlg">
-      <div class="modal">
-        <h3>انسخ الرابط و حطو في جوجل</h3>
-        <p>سبوتيفاي قريبا</p>
-        <div class="row" style="margin-bottom:10px">
-          <input class="copy" id="linkInput" value="SOON" readonly>
-          <button class="cta" id="copyBtn">نسخ</button>
-        </div>
-        <p class="small">SOON.</p>
-        <div style="text-align:end;margin-top:8px">
-          <button class="pill" id="closeModal">إغلاق</button>
-        </div>
+    <footer>
+      <h3>Contact us</h3>
+      <div class="socials">
+        <a href="https://instagram.com/youraccount1" target="_blank">📸</a>
+        <a href="https://instagram.com/youraccount2" target="_blank">📸</a>
       </div>
-    </dialog>
+    </footer>
   </div>
 
   <script>
-    const dlg = document.getElementById('dlg');
-    document.getElementById('openModal').addEventListener('click',()=>dlg.showModal());
-    document.getElementById('closeModal').addEventListener('click',()=>dlg.close());
-    document.getElementById('copyBtn').addEventListener('click',()=>{
-      const input = document.getElementById('linkInput');
-      input.select();
-      document.execCommand('copy');
-      const prev = input.value; input.value = '✅ تم النسخ!';
-      setTimeout(()=>{input.value = prev}, 900);
-    });
-
-    // اجعل الأزرار تفتح روابط مختلفة حسب الجهاز — غيّر الروابط أدناه
     const routes = {
-      pc: 'https://acchref777.github.io',
+      netflix: "https://acchref777.github.io", 
+      instagram: "#",
+      facebook: "#",
+      service4: "#",
+      service5: "#",
+      service6: "#"
     };
+
     document.querySelectorAll('[data-goal]').forEach(el=>{
-      el.addEventListener('click', (e)=>{
+      el.addEventListener('click',(e)=>{
         e.preventDefault();
         const k = el.getAttribute('data-goal');
-        const href = routes[k] || '#';
+        const href = routes[k] || "#";
         window.location.href = href;
       })
-    })
+    });
   </script>
 </body>
 </html>
-
-
